@@ -27,14 +27,14 @@ struct YourApp: App {
     var body: some Scene {
         WindowGroup {
             NavigationView {
-//                if viewModel.isAuthenticated {
-//                    HelloPage(viewModel: viewModel)
-//                } else {
-//                    SignInView(viewModel: viewModel)
-//                }
+                if viewModel.isAuthenticated {       // メールアドレス登録ログイン用
+                    HelloPage(viewModel: viewModel)
+                } else {
+                    SignInView(viewModel: viewModel)
+                }
                 AutomaLoggInView()
                     .onAppear {
-                        authenticateUser()
+//                        authenticateUser() // 匿名認証用
                     }
             }
         }
